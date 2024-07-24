@@ -1,0 +1,104 @@
+@import 'src/app/style/style.config.scss';
+
+.titleBlock {
+    color: var(--base-white);
+    @include typography(120);
+    margin-bottom: 20px;
+
+    @include respond(m) {
+        @include typography(140);
+        margin-bottom: 32px;
+    }
+
+    @include respond(l) {
+        @include typography(160);
+    }
+}
+
+.wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @include respond(l) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.block {
+    padding: 32px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--secondary-dark);
+    color: var(--base-white);
+    text-align: left;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.blocksSelected {
+    background-color: var(--accent);
+}
+
+.titleWrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    fill: var(--base-white);
+}
+
+.textWrap {
+    display: flex;
+    gap: 32px;
+}
+
+.index {
+    display: none;
+    @include typography(120);
+
+    @include respond(m) {
+        display: block;
+    }
+}
+
+.title {
+    font-weight: 500;
+    @include typography(100);
+
+    @include respond(m) {
+        @include typography(140);
+    }
+}
+
+.subtitle {
+    @include typography(90);
+    margin-top: 12px;
+}
+
+.icon {
+    transition: transform 0.4s ease;
+}
+
+.iconSelected {
+    transform: rotate(180deg);
+}
+
+.image {
+    display: none;
+    background-image: url('./img/banner.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    border-radius: 32px;
+
+    @include respond(l) {
+        display: block;
+    }
+}

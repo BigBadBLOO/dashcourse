@@ -1,0 +1,73 @@
+@mixin respond($size) {
+  $breakpoints: (
+          s: 0px,
+          m: 431px,
+          l: 769px,
+          xl: 1441px,
+  );
+
+  $matched: map-get($breakpoints, $size);
+
+  @if $matched {
+    @media only screen and (min-width: #{$matched}) {
+      @content;
+    }
+  }
+}
+
+@function units($number) {
+  $superpixel: 4px;
+
+  @return $superpixel * $number;
+}
+
+$params: (
+        200: (
+                font-size: 72px,
+                line-height: 110%,
+        ),
+        180: (
+                font-size: 60px,
+                line-height: 110%,
+        ),
+        160: (
+                font-size: 52px,
+                line-height: 110%,
+        ),
+        140: (
+                font-size: 32px,
+                line-height: 110%,
+        ),
+        120: (
+                font-size: 24px,
+                line-height: 110%,
+        ),
+        100: (
+                font-size: 18px,
+                line-height: 120%,
+        ),
+        90: (
+                font-size: 16px,
+                line-height: 120%,
+        ),
+        80: (
+                font-size: 12px,
+                line-height: 120%,
+        ),
+);
+
+@function getTypographyParam($size, $name: null) {
+  $matched: map-get($params, $size);
+  $default: (
+          font-size: 18px,
+          line-height: 120%,
+  );
+  $data: if($matched, $matched, $default);
+
+  @return if(name, map-get($data, $name), $data);
+}
+
+@mixin typography($size) {
+  font-size: getTypographyParam($size, 'font-size');
+  line-height: getTypographyParam($size, 'line-height');
+}

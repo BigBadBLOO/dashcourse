@@ -1,0 +1,14 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+    padding: 12px 12px 40px;
+    background-color: var(--base-dark);
+
+    @include respond(m) {
+        padding: 20px 40px 40px;
+    }
+
+    @include respond(l) {
+        padding: 40px 92px 80px;
+    }
+}

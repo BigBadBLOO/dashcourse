@@ -1,0 +1,74 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 18px 12px;
+    background-color: var(--base-dark);
+    color: var(--base-white);
+    border-bottom: 1px solid var(--base-white);
+    overflow: hidden;
+
+    @include respond(m) {
+        padding: 20px 40px;
+    }
+
+    @include respond(l) {
+        height: 112px;
+        padding: 32px 92px;
+    }
+
+    @include respond(xl) {
+        height: 112px;
+        padding: 32px 82px;
+    }
+}
+
+.block {
+    display: flex;
+    justify-content: space-between;
+    min-width: 56px;
+
+    @include respond(m) {
+        min-width: 64px;
+    }
+
+    @include respond(l) {
+        min-width: 68px;
+    }
+}
+
+.linkBlock {
+    display: flex;
+    max-width: 420px;
+    width: 100%;
+    justify-content: space-between;
+
+    @include respond(xl) {
+        max-width: 500px;
+    }
+}
+
+
+
+.social {
+    fill: var(--accent);
+    transition: fill 0.5s ease;
+    cursor: pointer;
+
+    &:not(.socialDisable):not(:active):hover {
+        fill: var(--base-white);
+    }
+
+    &:not(.socialDisable):active {
+        fill: var(--secondary-dark);
+    }
+}
+
+.socialDisable {
+    fill: var(--darkGray);
+    cursor: not-allowed;
+}

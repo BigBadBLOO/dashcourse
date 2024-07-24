@@ -1,0 +1,53 @@
+@import 'src/app/style/style.config.scss';
+
+.button {
+    all: unset;
+    fill: var(--base-white);
+}
+
+.enter {
+    opacity: 0;
+}
+.enterActive {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+.exit {
+    opacity: 1;
+}
+.exitActive {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.menu {
+    position: absolute;
+    height: 266px;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--secondary-dark);
+    border-radius: 0 0 32px 32px;
+    border-bottom: 1px solid var(--base-white);
+    border-right: 1px solid var(--base-white);
+    border-left: 1px solid var(--base-white);
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.social {
+    fill: var(--base-white);
+    transition: fill 0.5s ease;
+
+    &:not(:active):hover {
+        fill: var(--accent);
+    }
+
+    &:active {
+        fill: var(--secondary-dark);
+    }
+}

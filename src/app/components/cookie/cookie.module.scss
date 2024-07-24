@@ -1,0 +1,49 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    width: 100%;
+    max-width: 90%;
+    background-color: var(--base-dark);
+    border: 1px solid var(--accent);
+    border-radius: 32px;
+    display: flex;
+    gap: 24px;
+    padding: 12px;
+
+    @include respond(m) {
+        padding: 32px;
+        right: inherit;
+        max-width: 744px;
+    }
+}
+
+.text {
+    @include typography(80);
+    color: var(--base-white);
+    margin: auto 0;
+
+    @include respond(m) {
+        @include typography(120);
+    }
+}
+
+.link {
+    color: var(--accent);
+}
+
+.buttonWrap {
+    display: flex;
+}
+
+.button {
+    min-width: 68px;
+    margin: auto;
+
+    @include respond(m) {
+        min-width: 138px;
+    }
+}
