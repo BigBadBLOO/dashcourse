@@ -1,0 +1,30 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .path {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.s {
+    width: units(4);
+    height: units(4);
+    min-width: units(4);
+    min-height: units(4);
+  }
+
+  &.m {
+    width: units(6);
+    height: units(6);
+    min-width: units(6);
+    min-height: units(6);
+  }
+}

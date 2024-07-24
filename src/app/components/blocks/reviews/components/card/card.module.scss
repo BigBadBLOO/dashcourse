@@ -1,0 +1,53 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+    color: var(--base-white);
+    width: 320px;
+    height: 500px;
+    background-color: var(--secondary-dark);
+    text-align: left;
+    border-radius: 32px;
+    border: 1px solid var(--base-white);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include respond(m) {
+        width: 514px;
+        height: 340px;
+    }
+
+    @include respond(l) {
+        height: 438px;
+    }
+
+    @include respond(xl) {
+        width: 552px;
+        height: 438px;
+    }
+}
+
+.textsWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.text {
+    @include typography(90);
+}
+
+.title {
+    margin-bottom: 4px;
+    @include typography(100);
+    font-weight: 500;
+}
+
+.subtitle {
+    @include typography(80);
+
+    //@include respond(l) {
+    //    @include typography(120);
+    //}
+}

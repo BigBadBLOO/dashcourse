@@ -1,0 +1,88 @@
+@import 'src/app/style/style.config.scss';
+
+.wrapSmall {
+    color: var(--base-white);
+    @include typography(120);
+
+    .title {
+        @include typography(120);
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+}
+
+.wrapMedium {
+    color: var(--base-white);
+
+    .title {
+        margin-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .titleText {
+        @include typography(140);
+        word-break: break-word;
+        font-weight: 500;
+    }
+}
+
+.wrapLarge {
+    color: var(--base-white);
+
+    .title {
+        @include typography(160);
+        margin-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .titleText {
+        @include typography(160);
+        word-break: break-word;
+        font-weight: 500;
+    }
+}
+
+.wrapExtraLarge {
+    color: var(--base-white);
+
+    .title {
+        @include typography(160);
+        margin-bottom: 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+        font-weight: 500;
+    }
+}
+
+.buttonControl {
+    display: flex;
+    gap: 12px;
+}
+
+.arrowButton {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--accent);
+    fill: var(--base-white);
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.arrowDisabled {
+    fill: var(--darkGray);
+    border: 1px solid var(--darkGray);
+    cursor: not-allowed;
+}
+

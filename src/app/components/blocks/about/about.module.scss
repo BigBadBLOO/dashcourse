@@ -1,0 +1,165 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+    color: var(--base-white)
+}
+
+.newLine {
+    display: none;
+    @include respond(l) {
+        display: block;
+    }
+}
+.image {
+    background-image: url('./img/building.jpg') ;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    margin-bottom: 8px;
+    min-height: 315px;
+    padding: 20px 8px;
+    border-radius: 20px;
+
+    @include respond(m) {
+        margin-bottom: 16px;
+        min-height: 483px;
+        padding: 32px;
+        border-radius: 32px;
+    }
+
+    @include respond(l) {
+        margin-bottom: 16px;
+        min-height: 600px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .imageTitle {
+        text-align: center;
+        margin-bottom: 12px;
+        font-weight: 500;
+        @include typography(140);
+
+        @include respond(m) {
+            font-weight: 400;
+            @include typography(160);
+            margin-bottom: 20px;
+        }
+
+        @include respond(l) {
+            @include typography(180);
+        }
+
+        @include respond(xl) {
+            @include typography(200);
+        }
+    }
+
+    .imageSubtitle {
+        max-width: 1163px;
+        text-align: center;
+        margin: 0 auto 20px;
+        font-weight: normal;
+        @include typography(90);
+
+        @include respond(m) {
+            @include typography(120);
+        }
+    }
+
+    .imageButton {
+        max-width: 320px;
+        margin: 0 auto;
+
+        @include respond(m) {
+            max-width: 196px;
+        }
+
+        @include respond(xl) {
+            max-width: 275px;
+        }
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 8px;
+
+    @include respond(m) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 16px;
+    }
+
+    @include respond(l) {
+        gap: 20px;
+    }
+}
+
+.card {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 26px;
+    padding: 20px;
+    background-color: var(--secondary-dark);
+    border-radius: 20px;
+
+    @include respond(m) {
+        padding: 32px 16px;
+        gap: 36px;
+    }
+
+    @include respond(l) {
+        padding: 32px;
+        gap: 96px;
+    }
+}
+
+.title {
+    @include typography(90);
+
+    @include respond(m) {
+        @include typography(100);
+    }
+
+    @include respond(l) {
+        @include typography(120);
+    }
+}
+
+.subtitle {
+    font-weight: 500;
+    @include typography(140);
+
+    @include respond(l) {
+        font-weight: 400;
+        @include typography(180);
+    }
+
+    @include respond(xl) {
+        @include typography(200);
+    }
+}
+
+.enter {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(100%);
+}
+.enterActive {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-10%) scale(1.2);
+    transition: all 0.7s;
+}
+
+.enterDone {
+    visibility: visible;
+    transition: all 0.7s;
+}

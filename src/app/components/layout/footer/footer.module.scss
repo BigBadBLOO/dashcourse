@@ -1,0 +1,87 @@
+@import 'src/app/style/style.config.scss';
+
+.wrapSmall {
+    overflow: hidden;
+    border-top: 1px solid var(--base-white);
+    padding: 20px 12px;
+    background-color: var(--base-dark);
+    color: var(--base-white);
+
+    .blockFirst {
+        margin-top: 32px;
+        margin-bottom: 16px;
+    }
+
+    .button {
+        margin-top: 16px;
+    }
+
+    .rights {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
+
+.wrapMedium {
+    overflow: hidden;
+    border-top: 1px solid var(--base-white);
+    padding: 20px 40px;
+    background-color: var(--base-dark);
+    color: var(--base-white);
+
+    .rights {
+        text-align: right;
+        margin-top: 40px;
+    }
+}
+
+.wrapLarge {
+    overflow: hidden;
+    border-top: 1px solid var(--base-white);
+    padding: 20px 92px;
+    background-color: var(--base-dark);
+    color: var(--base-white);
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+        max-width: 405px;
+        width: 100%;
+    }
+
+    .blockLogo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .rights {
+        text-align: left;
+    }
+}
+
+.block {
+    background-color: var(--secondary-dark);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 32px;
+}
+
+.blocksRow {
+    display: flex;
+    gap: 16px;
+}
+
+.blocksColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 476px;
+}
+
+.text {
+    font-weight: 500;
+    @include typography(100);
+}

@@ -1,0 +1,82 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+    border-radius: 20px;
+    padding: 20px;
+    width: 320px;
+    background-color: var(--secondary-dark);
+    height: 100%;
+    text-align: left;
+
+    @include respond(m) {
+        width: 600px;
+    }
+
+    @include respond(l) {
+        width: 552px;
+        border-radius: 32px;
+        padding: 32px;
+    }
+}
+
+.image {
+    width: 280px;
+    height: 340px;
+    border-radius: 20px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+
+    @include respond(m) {
+        width: 560px;
+    }
+
+    @include respond(l) {
+        width: 508px;
+        height: 680px;
+        border-radius: 32px;
+    }
+}
+
+.square {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    background: black;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    @include typography(120);
+
+    @include respond(m) {
+        border-radius: 32px;
+        padding: 16px 32px;
+        top: 32px;
+        right: 23px;
+    }
+
+    @include respond(l) {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.title {
+    margin: 32px 0 12px;
+    @include typography(120);
+
+    @include respond(l) {
+        font-weight: 500;
+        @include typography(140);
+    }
+}
+
+.subtitle {
+    @include typography(90);
+
+    @include respond(l) {
+        @include typography(120);
+    }
+}

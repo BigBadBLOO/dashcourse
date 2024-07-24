@@ -1,0 +1,17 @@
+@import 'src/app/style/style.config.scss';
+
+.body {
+    min-width: 360px;
+
+    @include respond(m) {
+        min-width: 768px;
+    }
+
+    @include respond(l) {
+        min-width: 1440px;
+    }
+
+    @include respond(xl) {
+        min-width: 1920px;
+    }
+}
