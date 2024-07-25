@@ -11,9 +11,8 @@ type PropsType = {
 
 export const Card: React.FC<PropsType> = ({img, square, title, subtitle}) => {
   return <div className={st.wrap}>
-    <div className={st.image} style={{backgroundImage: `url(${img})`}}>
-      <div className={st.square}>{square}</div>
-    </div>
+    <div className={st.image} style={{backgroundImage: `url(${img})`}}></div>
+    <div className={st.square}>{square}</div>
     <div className={st.textWrap}>
       <p className={st.title}>{title}</p>
       <p className={st.subtitle}>{subtitle}</p>

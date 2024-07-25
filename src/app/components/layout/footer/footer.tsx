@@ -16,12 +16,14 @@ export const Footer = () => {
 
   if (screenSize === 's') {
     return <footer className={st.wrapSmall}>
-      <Image
-        src="/logoText.svg"
-        width={248}
-        height={30}
-        alt="Logo dashcourse"
-      />
+      <Link link={`#${anchor.begin}`}>
+        <Image
+          src="/logoText.svg"
+          width={248}
+          height={30}
+          alt="Logo dashcourse"
+        />
+      </Link>
       <div className={cn(st.block, st.blockFirst)}>
         <Link link={`#${anchor.about}`}>О компании</Link>
         <Link link={`#${anchor.advantages}`}>Преимущества</Link>
@@ -43,12 +45,14 @@ export const Footer = () => {
 
   if (screenSize === 'm') {
     return <footer className={st.wrapMedium}>
-      <Image
-        src="/logoText.svg"
-        width={248}
-        height={30}
-        alt="Logo dashcourse"
-      />
+      <Link link={`#${anchor.begin}`}>
+        <Image
+          src="/logoText.svg"
+          width={248}
+          height={30}
+          alt="Logo dashcourse"
+        />
+      </Link>
       <div className={st.blocksRow}>
         <div className={cn(st.block, st.blockFirst)}>
           <Link link={`#${anchor.about}`}>О компании</Link>

@@ -4,6 +4,7 @@
     color: var(--base-white);
     @include typography(120);
     margin-bottom: 20px;
+    font-weight: 500;
 
     @include respond(m) {
         @include typography(140);

@@ -10,12 +10,9 @@ import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
 import {useObserver} from "@/app/hooks/useObserver";
 
 const IMAGE_SUBTITLE = {
-  'small': <h2 className={st.imageSubtitle}>DASCOURSE &mdash; инвестиционная компания, ориентированная на коммерческую
-    недвижимость в России и за рубежом.</h2>,
+  'small': <h2 className={st.imageSubtitle}>DASCOURSE&nbsp;&mdash; инвестиционная компания, ориентированная на&nbsp;коммерческую недвижимость в&nbsp;России и&nbsp;за&nbsp;рубежом.</h2>,
   'large': <h2 className={st.imageSubtitle}>
-    DASCOURSE &mdash; инвестиционная компания, ориентированная на коммерческую недвижимость в России и за рубежом. Мы
-    предлагаем готовый арендный бизнес с выстроенной структурой и инвестирование в различные виды коммерческой
-    недвижимости.
+    DASCOURSE&nbsp;&mdash; инвестиционная компания, ориентированная на&nbsp;коммерческую недвижимость в&nbsp;России и&nbsp;за&nbsp;рубежом. Мы&nbsp;предлагаем готовый арендный бизнес с&nbsp;выстроенной структурой и&nbsp;инвестирование в&nbsp;различные виды коммерческой недвижимости.
   </h2>
 }
 

@@ -41,7 +41,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 16px;
-        overflow: scroll;
+        overflow: hidden;
     }
 }
 
@@ -58,7 +58,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
-        overflow: scroll;
+        overflow: hidden;
     }
 }
 

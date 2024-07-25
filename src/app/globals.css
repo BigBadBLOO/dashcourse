@@ -1,6 +1,6 @@
 :root {
   --base-dark: #171717;
-  --secondary-dark: #1B1A1A;
+  --secondary-dark: #292929;
   --base-white: #FFFFFF;
   --darkGray: #8A8A8A;
   --accent: #FF5F00;
@@ -31,4 +31,8 @@ a {
   color: inherit;
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+.slide.selected {
+  background: none;
 }

@@ -70,8 +70,13 @@
 }
 
 .blocksRow {
+    margin-top: 40px;
     display: flex;
     gap: 16px;
+
+    @include respond(l) {
+        margin-top: 0;
+    }
 }
 
 .blocksColumn {
