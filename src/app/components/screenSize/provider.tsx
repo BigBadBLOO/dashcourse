@@ -13,12 +13,10 @@ export const ProviderScreenSize: React.FC<PropsType> = ({children, initial}) => 
     const [screenWidth, setScreenWidth] = useState(0);
 
     useEffect(() => {
-        const page = document.documentElement;
-        const bodyMinWidthStr = getComputedStyle(document.body).minWidth;
-        const bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ""));
-
         const scalePage = (clientWidth: number) => {
+            const page = document.documentElement;
             const innerWidth = window.innerWidth;
+
             if(innerWidth < clientWidth) {
                 const resizeCoef = innerWidth / clientWidth;
                 const resizeCoefPercents = 100 * resizeCoef;
@@ -35,13 +33,14 @@ export const ProviderScreenSize: React.FC<PropsType> = ({children, initial}) => 
         }
 
         const handleResize = () => {
+            const bodyMinWidthStr = getComputedStyle(document.body).minWidth;
+            const bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ""));
             const innerWidth = window.innerWidth;
             const width = innerWidth > bodyMinWidthNumber ? innerWidth : bodyMinWidthNumber;
             const size = width <= 430 ? 's' : width > 430 && width <= 830 ? 'm' : width > 830 && width <= 1440 ? 'l' : 'xl'
 
             setScreenSize(size);
             setScreenWidth(width);
-            // setNewMeta(width)
             scalePage(width);
         }
 

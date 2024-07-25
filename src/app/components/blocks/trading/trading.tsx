@@ -9,7 +9,8 @@ import {Card} from "@/app/components/blocks/trading/components/card/card";
 import {Icon} from "@/app/components/dsm/Icon";
 import cn from "classnames";
 import {anchor} from "@/app/constants/anchor";
-import {CSSTransition} from "react-transition-group";
+import {useObserver} from "@/app/hooks/useObserver";
+import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
 
 const CARDS = [
   {
@@ -55,12 +56,16 @@ export const Trading = () => {
   const [currentIndex, setSlide] = useState(0)
   const setPrevSlide = () => setSlide(currentIndex > 0 ? currentIndex - 1 : 0);
   const setNextSlide = () => setSlide(currentIndex < CARDS.length ? currentIndex + 1 : CARDS.length);
+  const showHeader = useObserver(anchor.tradings, {threshold: 0.2});
+
 
   if (screenSize === 's') {
     const countCart = (screenWidth - 24) / 258
     const centerSlidePercentage = 100 / countCart;
     return <div className={st.wrapSmall}>
-      <h3 className={st.title}>Инвестируйте с DASCOURSE</h3>
+      <TitleAnimation show={showHeader}>
+        <h3 className={st.title}>Инвестируйте с DASCOURSE</h3>
+      </TitleAnimation>
       <Carousel
         swipeable
         showArrows={false}
@@ -84,7 +89,9 @@ export const Trading = () => {
 
     return <div className={st.wrapMedium}>
       <div className={st.title}>
-        <h3 className={st.titleText}>Инвестируйте с DASCOURSE</h3>
+        <TitleAnimation show={showHeader}>
+          <h3 className={st.title}>Инвестируйте с DASCOURSE</h3>
+        </TitleAnimation>
         <div className={st.buttonControl}>
           <button
             className={cn(st.arrowButton, currentIndex === 0 && st.arrowDisabled)}
@@ -122,17 +129,10 @@ export const Trading = () => {
     return <Card key={card.img} img={card.img} title={card.title} subtitle={card.subtitle}/>
   })
 
-  if (screenSize === 'l') {
-    return <div className={st.wrapLarge}>
+  return <div className={screenSize === 'l' ? st.wrapLarge : st.wrapExtraLarge}>
+    <TitleAnimation show={showHeader}>
       <h3 className={st.titleText}>Инвестируйте с DASCOURSE</h3>
-      <div className={st.blocks}>
-        {cards}
-      </div>
-    </div>
-  }
-
-  return <div className={st.wrapExtraLarge}>
-    <h3 className={st.titleText}>Инвестируйте с DASCOURSE</h3>
+    </TitleAnimation>
     <div className={st.blocks}>
       {cards}
     </div>

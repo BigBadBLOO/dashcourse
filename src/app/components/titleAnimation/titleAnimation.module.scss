@@ -1,0 +1,20 @@
+@import 'src/app/style/style.config.scss';
+
+.wrap {
+    opacity: 0;
+}
+
+.enterTitle {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.enterTitleActive {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.7s 0.3s;
+}
+
+.enterTitleDone {
+    opacity: 1;
+}

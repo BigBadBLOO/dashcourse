@@ -1,10 +1,15 @@
 "use client"
 import {Carousel} from "react-responsive-carousel";
 import React, {useContext, useState} from "react";
+import cn from "classnames";
+
 import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {Card} from "@/app/components/blocks/objects/components/card/card";
 import {Icon} from "@/app/components/dsm/Icon";
-import cn from "classnames";
+import {useObserver} from "@/app/hooks/useObserver";
+import {anchor} from "@/app/constants/anchor";
+import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
+
 
 import st from './objects.module.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -35,13 +40,16 @@ export const Objects = () => {
   const [currentIndex, setSlide] = useState(0)
   const setPrevSlide = () => setSlide(currentIndex > 0 ? currentIndex - 1 : 0);
   const setNextSlide = () => setSlide(currentIndex < CARDS.length ? currentIndex + 1 : CARDS.length);
+  const showHeader = useObserver(anchor.objects, {threshold: 0.2});
 
   if (screenSize === 's') {
     const countCart = (screenWidth - 24) / 336
     const centerSlidePercentage = 100 / countCart;
 
     return <div className={st.wrapSmall}>
-      <h3 className={st.title}>Успешно реализованные объекты</h3>
+      <TitleAnimation show={showHeader}>
+        <h3 className={st.title}>Успешно реализованные объекты</h3>
+      </TitleAnimation>
       <Carousel
         swipeable
         showArrows={false}
@@ -65,7 +73,9 @@ export const Objects = () => {
 
     return <div className={st.wrapMedium}>
       <div className={st.title}>
-        <h3 className={st.titleText}>Успешно реализованные объекты</h3>
+        <TitleAnimation show={showHeader}>
+          <h3 className={st.titleText}>Успешно реализованные объекты</h3>
+        </TitleAnimation>
         <div className={st.buttonControl}>
           <button
             className={cn(st.arrowButton, currentIndex === 0 && st.arrowDisabled)}
@@ -106,7 +116,9 @@ export const Objects = () => {
 
     return <div className={st.wrapLarge}>
       <div className={st.title}>
-        <h3 className={st.titleText}>Успешно реализованные объекты</h3>
+        <TitleAnimation show={showHeader}>
+          <h3 className={st.titleText}>Успешно реализованные объекты</h3>
+        </TitleAnimation>
         <div className={st.buttonControl}>
           <button
             className={cn(st.arrowButton, currentIndex === 0 && st.arrowDisabled)}

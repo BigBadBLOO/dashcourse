@@ -6,8 +6,33 @@ import st from './cookie.module.scss';
 
 const APPLY_COOKIE = 'APPLY_COOKIE';
 
+const debounce = (func: any, timeout = 300) => {
+  let timer: any;
+  return (...args: any []) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  };
+}
+
 export const Cookie = () => {
   const [show, setShow] = useState(false);
+  const [top, setTop] = useState(0);
+
+  useEffect(() => {
+    const calc = () => {
+      const bodyMinWidthStr = getComputedStyle(document.body).minWidth;
+      const bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ""));
+      const resizeCoef = window.innerWidth / bodyMinWidthNumber;
+
+      return (window.innerHeight  + window.scrollY - 85 - 20) / resizeCoef
+    }
+
+    const debounceFn = debounce(() => setTop(calc()))
+    addEventListener('scroll', debounceFn)
+    debounceFn()
+
+    return () => removeEventListener('scroll', debounceFn)
+  }, []);
 
   useEffect(() => {
     const apply = localStorage.getItem(APPLY_COOKIE);
@@ -16,7 +41,7 @@ export const Cookie = () => {
 
   if (!show) return null;
 
-  return <div className={st.wrap}>
+  return <div className={st.wrap} style={{top}}>
     <p className={st.text}>
       Пользуясь нашим сайтом, Вы соглашаетесь с тем, что мы используем <a className={st.link} href={'/files/cookies_DAS_PDF.pdf'} target="_blank">Cookies</a>
     </p>

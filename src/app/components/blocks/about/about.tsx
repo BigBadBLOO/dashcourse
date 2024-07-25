@@ -6,11 +6,16 @@ import {CSSTransition} from "react-transition-group";
 import {anchor} from "@/app/constants/anchor";
 
 import st from './about.module.scss';
+import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
+import {useObserver} from "@/app/hooks/useObserver";
 
 const IMAGE_SUBTITLE = {
-  'small': <h2 className={st.imageSubtitle}>DASCOURSE &mdash; инвестиционная компания, ориентированная на коммерческую недвижимость в России и за рубежом.</h2>,
+  'small': <h2 className={st.imageSubtitle}>DASCOURSE &mdash; инвестиционная компания, ориентированная на коммерческую
+    недвижимость в России и за рубежом.</h2>,
   'large': <h2 className={st.imageSubtitle}>
-    DASCOURSE &mdash; инвестиционная компания, ориентированная на коммерческую недвижимость в России и за рубежом. Мы предлагаем готовый арендный бизнес с выстроенной структурой и инвестирование в различные виды коммерческой недвижимости.
+    DASCOURSE &mdash; инвестиционная компания, ориентированная на коммерческую недвижимость в России и за рубежом. Мы
+    предлагаем готовый арендный бизнес с выстроенной структурой и инвестирование в различные виды коммерческой
+    недвижимости.
   </h2>
 }
 
@@ -27,41 +32,35 @@ const CARDS = (size: string) => [
   },
   {
     title: 'Средний срок реализации',
-    subtitle: size == 'xl' ? '8 - 12 месяцев' : '8 - 12 мес.',
+    subtitle: size == 'xl' ? '8 - 12 месяцев' : '8 - 12 мес.',
     nodeRef: createRef() as RefObject<HTMLDivElement>,
   }
 ]
 export const About = () => {
   const {screenSize} = useContext(ContextForScreenSize);
+  const showBlock = useObserver(anchor.tradings, {threshold: 0});
+
   const [show, setShow] = React.useState(0);
+  const [titleShow, setTitleShow] = React.useState(false);
 
   useEffect(() => {
-    const el = window.document.querySelector(`#${anchor.tradings}`)
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setShow(1);
-        if (el) observer.unobserve(el);
-      }
-    }, {
-      threshold: 0,
-    });
+    if(showBlock) setShow(1)
+  }, [showBlock]);
 
-    if (el) observer.observe(el)
-
-    return () => {
-      if (el) observer.unobserve(el);
-    }
+  useEffect(() => {
+    setTitleShow(true)
   }, []);
 
   return <div className={st.wrap}>
     <div className={st.image}>
-      <h1 className={st.imageTitle}>
-        Надежный партнер <br className={st.newLine}/>в сохранении и приумножении капитала
-      </h1>
-      {screenSize === 's' ? IMAGE_SUBTITLE.small : IMAGE_SUBTITLE.large}
-      <Button className={st.imageButton} onClick={() => {
-      }} withoutIcon={screenSize !== 'xl'}>Инвестировать</Button>
-
+      <TitleAnimation show={titleShow}>
+          <h1 className={st.imageTitle}>
+            Надежный партнер <br className={st.newLine}/>в сохранении и приумножении капитала
+          </h1>
+          {screenSize === 's' ? IMAGE_SUBTITLE.small : IMAGE_SUBTITLE.large}
+          <Button className={st.imageButton} onClick={() => {
+          }} withoutIcon={screenSize !== 'xl'}>Инвестировать</Button>
+      </TitleAnimation>
     </div>
     <div className={st.cards}>
       {CARDS(screenSize).map(({title, subtitle, nodeRef}, index) => (

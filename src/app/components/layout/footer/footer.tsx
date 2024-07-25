@@ -29,10 +29,10 @@ export const Footer = () => {
         <Link link={`#${anchor.reviews}`}>Отзывы</Link>
       </div>
       <div className={st.block}>
-        <p>Адрес: 125040, город Москва, Ленинградский пр-кт, д. 34а, помещ. 1305</p>
-        <p>ОГРН 1247700371313</p>
-        <p>ИНН 9714049826</p>
-        <a href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
+        <p className={st.text}>Адрес: 125040, город Москва, Ленинградский пр-кт, д. 34а, помещ. 1305</p>
+        <p className={st.text}>ОГРН 1247700371313</p>
+        <p className={st.text}>ИНН 9714049826</p>
+        <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
       </div>
       {/*TODO сделать переход*/}
       <Button className={st.button} onClick={() => {
@@ -58,10 +58,10 @@ export const Footer = () => {
         </div>
         <div className={st.blocksColumn}>
           <div className={st.block}>
-            <p>Адрес: 125040, город Москва, Ленинградский пр-кт, д. 34а, помещ. 1305</p>
-            <p>ОГРН 1247700371313</p>
-            <p>ИНН 9714049826</p>
-            <a href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
+            <p className={st.text}>Адрес: 125040, город Москва, Ленинградский пр-кт, д. 34а, помещ. 1305</p>
+            <p className={st.text}>ОГРН 1247700371313</p>
+            <p className={st.text}>ИНН 9714049826</p>
+            <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
           </div>
           {/*TODO сделать переход*/}
           <Button className={st.button} onClick={() => {
