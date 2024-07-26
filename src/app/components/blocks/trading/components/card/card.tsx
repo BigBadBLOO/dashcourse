@@ -28,6 +28,7 @@ export const Card: React.FC<PropsType> = ({img, title, subtitle}) => {
         <p className={st.subtitle}>{subtitle}</p>
       </div>
       <Image
+        priority
         src={img}
         width={dimension}
         height={dimension}
@@ -39,6 +40,7 @@ export const Card: React.FC<PropsType> = ({img, title, subtitle}) => {
 
   return <div className={st.wrap}>
     <Image
+      priority
       src={img}
       width={dimension}
       height={dimension}

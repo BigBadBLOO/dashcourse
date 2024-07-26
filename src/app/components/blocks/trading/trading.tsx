@@ -3,7 +3,7 @@ import {Carousel} from "react-responsive-carousel";
 
 import st from './trading.module.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import React, {createRef, RefObject, useContext, useEffect, useState} from "react";
+import React, {createRef, RefObject, useContext, useState} from "react";
 import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {Card} from "@/app/components/blocks/trading/components/card/card";
 import {Icon} from "@/app/components/dsm/Icon";
@@ -15,37 +15,37 @@ import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
 const CARDS = [
   {
     nodeRef: createRef() as RefObject<HTMLDivElement>,
-    img: "/trading/first.svg",
+    img: "/trading/01.svg",
     title: "Анализ рынка",
     subtitle: "Проведение детального анализа рынка коммерческой недвижимости, и помощь с выбором наиболее перспективного направления для инвестиций.",
   },
   {
     nodeRef: createRef() as RefObject<HTMLDivElement>,
-    img: "/trading/second.svg",
+    img: "/trading/02.svg",
     title: "Инвестиционная стратегия",
     subtitle: 'На основе данных разрабатывается инвестиционная стратегия.'
   },
   {
     nodeRef: createRef() as RefObject<HTMLDivElement>,
-    img: "/trading/third.svg",
+    img: "/trading/03.svg",
     title: "Бизнес-план",
     subtitle: 'Разработка детального бизнес-плана, включающих описание проекта, финансовую модель, маркетинговый план и стратегию выхода.'
   },
   {
     nodeRef: createRef() as RefObject<HTMLDivElement>,
-    img: "/trading/forth.svg",
+    img: "/trading/04.svg",
     title: "Цикл актива",
     subtitle: 'Проведение необходимых работ по улучшению объекта, чтобы повысить его привлекательность и доходность.'
   },
   {
     nodeRef: createRef() as RefObject<HTMLDivElement>,
-    img: "/trading/fifth.svg",
+    img: "/trading/05.svg",
     title: "Высокая доходность",
     subtitle: 'Помощь с управлением инвестициями, оптимизация расходов и повышение эффективности использования помещения.'
   },
   {
     nodeRef: createRef() as RefObject<HTMLDivElement>,
-    img: "/trading/six.svg",
+    img: "/trading/06.svg",
     title: "Управление активом",
     subtitle: 'Непрерывный мониторинг рыночных тенденций. Это поможет вам поддерживать ценность ваших активов и максимизировать их доходность.'
   }
@@ -75,7 +75,7 @@ export const Trading = () => {
         centerSlidePercentage={centerSlidePercentage}
         showThumbs={false}
       >
-        {CARDS.map((card, index) => {
+        {CARDS.map((card) => {
           return <Card key={card.img} img={card.img} title={card.title} subtitle={card.subtitle}/>
         })}
       </Carousel>

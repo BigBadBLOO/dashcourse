@@ -1,8 +1,8 @@
 import React from "react";
 import type {Metadata} from "next";
 import cn from "classnames";
-import localFont from 'next/font/local'
-import type { Viewport } from 'next'
+import localFont from 'next/font/local';
+import Head from "next/head";
 // import DeviceDetector from "device-detector-js";
 // import {headers} from "next/headers";
 
@@ -48,19 +48,44 @@ const getDeviceType = (): ScreenSizeType => {
   // return type === 'desktop' ? 'l' : type === 'tablet' ? 'm' : 's'
 }
 
+const IMAGES = [
+  '/about/01.webp',
+
+  '/advantages/01.jpg',
+  '/advantages/02.png',
+  '/advantages/03.png',
+  '/advantages/04.png',
+  '/advantages/05.png',
+
+  '/objects/01.jpeg',
+  '/objects/02.jpeg',
+  '/objects/03.jpeg',
+]
+
 export default function RootLayout({children}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={cn(font.variable, st.body)}>
-        <ProviderScreenSize initial={getDeviceType()}>
-          <Header/>
-          {children}
-          <Footer />
-          <Cookie />
-        </ProviderScreenSize>
-      </body>
+    <Head>
+      {IMAGES.map(image => {
+        return <link
+          key={image}
+          rel="preload"
+          href={image}
+          as="image"
+        />
+      })}
+
+    </Head>
+    <body className={cn(font.variable, st.body)}>
+    <ProviderScreenSize initial={getDeviceType()}>
+      <Header/>
+      {children}
+      <Footer/>
+      <Cookie/>
+    </ProviderScreenSize>
+    </body>
     </html>
   );
 }

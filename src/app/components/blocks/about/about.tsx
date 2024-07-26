@@ -1,6 +1,6 @@
 "use client"
 import {Button} from "@/app/components/dsm/Button/button";
-import React, {createRef, RefObject, useContext, useEffect, useRef} from "react";
+import React, {createRef, RefObject, useContext, useEffect} from "react";
 import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {CSSTransition} from "react-transition-group";
 import {anchor} from "@/app/constants/anchor";
@@ -8,6 +8,7 @@ import {anchor} from "@/app/constants/anchor";
 import st from './about.module.scss';
 import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
 import {useObserver} from "@/app/hooks/useObserver";
+import {emailLink} from "@/app/constants/emailLink";
 
 const IMAGE_SUBTITLE = {
   'small': <h2 className={st.imageSubtitle}>DASCOURSE&nbsp;&mdash; инвестиционная компания, ориентированная на&nbsp;коммерческую недвижимость в&nbsp;России и&nbsp;за&nbsp;рубежом.</h2>,
@@ -55,8 +56,12 @@ export const About = () => {
             Надежный партнер <br className={st.newLine}/>в сохранении и приумножении капитала
           </h1>
           {screenSize === 's' ? IMAGE_SUBTITLE.small : IMAGE_SUBTITLE.large}
-          <Button className={st.imageButton} onClick={() => {
-          }} withoutIcon={screenSize !== 'xl'}>Инвестировать</Button>
+          <Button
+            className={st.imageButton}
+            onClick={() => { window.location.assign(emailLink)}}
+            withoutIcon={screenSize !== 'xl'}>
+            Инвестировать
+          </Button>
       </TitleAnimation>
     </div>
     <div className={st.cards}>

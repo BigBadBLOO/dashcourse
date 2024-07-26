@@ -8,6 +8,7 @@ import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {anchor} from "@/app/constants/anchor";
 import {Menu} from "@/app/components/layout/header/menu";
 import {Link} from "@/app/components/dsm/Link/link";
+import {emailLink} from "@/app/constants/emailLink";
 
 import st from './header.module.scss';
 
@@ -17,6 +18,7 @@ export const Header = () => {
   if (screenSize === 'l' || screenSize === 'xl') {
     return <header id={anchor.begin} className={st.wrap}>
       <Image
+        priority
         src="/logo.svg"
         width={280}
         height={48}
@@ -28,8 +30,9 @@ export const Header = () => {
         <Link link={`#${anchor.reviews}`}>Отзывы</Link>
       </div>
       <div className={st.block}>
-        {/* TODO вставить телефон и емаил */}
-        <Icon type="email" className={st.social} />
+        <Link link={emailLink}>
+          <Icon type="email" className={st.social} />
+        </Link>
         <Icon type="phone" className={cn(st.social, st.socialDisable)} />
       </div>
     </header>
@@ -41,14 +44,16 @@ export const Header = () => {
         <Menu />
       </div>
       <Image
+        priority
         src="/logo.svg"
         width={159}
         height={28}
         alt="Logo dashcourse"
       />
       <div className={st.block}>
-        {/* TODO вставить телефон и емаил */}
-        <Icon type="email" className={st.social} />
+        <Link link={emailLink}>
+          <Icon type="email" className={st.social} />
+        </Link>
         <Icon type="phone" className={cn(st.social, st.socialDisable)} />
       </div>
     </header>

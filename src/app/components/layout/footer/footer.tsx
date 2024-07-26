@@ -9,6 +9,7 @@ import {anchor} from "@/app/constants/anchor";
 import st from './footer.module.scss';
 import cn from "classnames";
 import {Button} from "@/app/components/dsm/Button/button";
+import {emailLink} from "@/app/constants/emailLink";
 
 
 export const Footer = () => {
@@ -22,6 +23,7 @@ export const Footer = () => {
           width={248}
           height={30}
           alt="Logo dashcourse"
+          priority
         />
       </Link>
       <div className={cn(st.block, st.blockFirst)}>
@@ -36,9 +38,9 @@ export const Footer = () => {
         <p className={st.text}>ИНН 9714049826</p>
         <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
       </div>
-      {/*TODO сделать переход*/}
-      <Button className={st.button} onClick={() => {
-      }}>Свяжитесь с нами</Button>
+      <Button className={st.button} onClick={() => { window.location.assign(emailLink)}}>
+        Свяжитесь с нами
+      </Button>
       <p className={st.rights}>© 2024. DASCOURSE</p>
     </footer>
   }
@@ -47,6 +49,7 @@ export const Footer = () => {
     return <footer className={st.wrapMedium}>
       <Link link={`#${anchor.begin}`}>
         <Image
+          priority
           src="/logoText.svg"
           width={248}
           height={30}
@@ -67,9 +70,9 @@ export const Footer = () => {
             <p className={st.text}>ИНН 9714049826</p>
             <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
           </div>
-          {/*TODO сделать переход*/}
-          <Button className={st.button} onClick={() => {
-          }}>Свяжитесь с нами</Button>
+          <Button className={st.button} onClick={() => { window.location.assign(emailLink)}}>
+            Свяжитесь с нами
+          </Button>
         </div>
       </div>
 
@@ -81,6 +84,7 @@ export const Footer = () => {
     <div className={st.blockLogo}>
       <Link link={`#${anchor.begin}`}>
         <Image
+          priority
           src="/logoText.svg"
           height={48}
           width={248}
@@ -104,9 +108,9 @@ export const Footer = () => {
           <p className={st.text}>ИНН 9714049826</p>
           <a className={st.text} href={'/files/cookies_DAS_PDF.pdf'} target="_blank">Cookies</a>
         </div>
-        {/*TODO сделать переход*/}
-        <Button className={st.button} onClick={() => {
-        }}>Свяжитесь с нами</Button>
+        <Button className={st.button} onClick={() => { window.location.assign(emailLink)}}>
+          Свяжитесь с нами
+        </Button>
       </div>
     </div>
   </footer>
