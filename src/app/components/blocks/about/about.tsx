@@ -36,7 +36,7 @@ const CARDS = (size: string) => [
 ]
 export const About = () => {
   const {screenSize} = useContext(ContextForScreenSize);
-  const showBlock = useObserver(anchor.tradings, {threshold: 0});
+  const showBlock = useObserver(anchor.about, {threshold: 0.5});
 
   const [show, setShow] = React.useState(0);
   const [titleShow, setTitleShow] = React.useState(false);

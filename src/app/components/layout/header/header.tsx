@@ -1,7 +1,6 @@
 "use client"
 import React, {useContext} from "react";
 import Image from 'next/image'
-import cn from "classnames";
 
 import {Icon} from "@/app/components/dsm/Icon";
 import {ContextForScreenSize} from "@/app/components/screenSize/context";
@@ -33,7 +32,9 @@ export const Header = () => {
         <Link link={emailLink}>
           <Icon type="email" className={st.social} />
         </Link>
-        <Icon type="phone" className={cn(st.social, st.socialDisable)} />
+        <Link link="tel:+78004442091">
+          <Icon type="phone" className={st.social} />
+        </Link>
       </div>
     </header>
   }
@@ -54,7 +55,9 @@ export const Header = () => {
         <Link link={emailLink}>
           <Icon type="email" className={st.social} />
         </Link>
-        <Icon type="phone" className={cn(st.social, st.socialDisable)} />
+        <Link link="tel:+78004442091">
+          <Icon type="phone" className={st.social} />
+        </Link>
       </div>
     </header>
   )

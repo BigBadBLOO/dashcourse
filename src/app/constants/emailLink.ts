@@ -1,1 +1,1 @@
-export const emailLink = 'mailto:info@gmail.com?subject=Привет!&body=Просто хотел'
+export const emailLink = 'mailto:info@dascourse.com?subject=Номер заявки №2074&body=.' // TODO вставить нормальный текст

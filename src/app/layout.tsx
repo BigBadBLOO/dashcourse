@@ -11,6 +11,7 @@ import {Footer} from "@/app/components/layout/footer/footer";
 import {ProviderScreenSize} from "@/app/components/screenSize/provider";
 import {ScreenSizeType} from "@/app/components/screenSize/context";
 import {Cookie} from "@/app/components/cookie/cookie";
+import {PreloadImages} from "@/app/components/layout/preloadImage/preloadImages";
 
 import "./globals.css";
 import st from "./layout.module.scss";
@@ -48,35 +49,13 @@ const getDeviceType = (): ScreenSizeType => {
   // return type === 'desktop' ? 'l' : type === 'tablet' ? 'm' : 's'
 }
 
-const IMAGES = [
-  '/about/01.webp',
-
-  '/advantages/01.jpg',
-  '/advantages/02.png',
-  '/advantages/03.png',
-  '/advantages/04.png',
-  '/advantages/05.png',
-
-  '/objects/01.jpeg',
-  '/objects/02.jpeg',
-  '/objects/03.jpeg',
-]
-
 export default function RootLayout({children}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
     <Head>
-      {IMAGES.map(image => {
-        return <link
-          key={image}
-          rel="preload"
-          href={image}
-          as="image"
-        />
-      })}
-
+      <PreloadImages />
     </Head>
     <body className={cn(font.variable, st.body)}>
     <ProviderScreenSize initial={getDeviceType()}>
