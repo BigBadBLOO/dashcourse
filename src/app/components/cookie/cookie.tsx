@@ -1,6 +1,6 @@
 "use client"
 import {Button} from "@/app/components/dsm/Button/button";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 
 import st from './cookie.module.scss';
 
@@ -17,14 +17,16 @@ const debounce = (func: any, timeout = 300) => {
 export const Cookie = () => {
   const [show, setShow] = useState(false);
   const [top, setTop] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const calc = () => {
       const bodyMinWidthStr = getComputedStyle(document.body).minWidth;
       const bodyMinWidthNumber = Number(bodyMinWidthStr.replace(/[^0-9]/g, ""));
       const resizeCoef = window.innerWidth / bodyMinWidthNumber;
+      const containerHeight = containerRef.current?.offsetHeight || 85;
 
-      return (window.innerHeight  + window.scrollY - 85 - 20) / resizeCoef
+      return (window.innerHeight  + window.scrollY - containerHeight - 20) / resizeCoef
     }
 
     const debounceFn = debounce(() => setTop(calc()))
@@ -41,7 +43,7 @@ export const Cookie = () => {
 
   if (!show) return null;
 
-  return <div className={st.wrap} style={{top}}>
+  return <div ref={containerRef} className={st.wrap} style={{top}}>
     <p className={st.text}>
       Пользуясь нашим сайтом, Вы соглашаетесь с тем, что мы используем <a className={st.link} href={'/files/cookies_DAS_PDF.pdf'} target="_blank">Cookies</a>
     </p>
