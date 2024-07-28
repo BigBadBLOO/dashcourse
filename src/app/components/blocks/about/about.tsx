@@ -1,14 +1,17 @@
 "use client"
-import {Button} from "@/app/components/dsm/Button/button";
-import React, {createRef, RefObject, useContext, useEffect} from "react";
-import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {CSSTransition} from "react-transition-group";
-import {anchor} from "@/app/constants/anchor";
+import React, {createRef, RefObject, useContext, useEffect} from "react";
 
-import st from './about.module.scss';
+import {Button} from "@/app/components/dsm/Button/button";
+import {ContextForScreenSize} from "@/app/components/screenSize/context";
+import {anchor} from "@/app/constants/anchor";
 import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
 import {useObserver} from "@/app/hooks/useObserver";
 import {emailLink} from "@/app/constants/emailLink";
+import {Link} from "@/app/components/dsm/Link/link";
+
+import st from './about.module.scss';
+
 
 const IMAGE_SUBTITLE = {
   'small': <h2 className={st.imageSubtitle}>DASCOURSE&nbsp;&mdash; инвестиционная компания, ориентированная на&nbsp;коммерческую недвижимость в&nbsp;России и&nbsp;за&nbsp;рубежом.</h2>,
@@ -56,12 +59,14 @@ export const About = () => {
             Надежный партнер <br className={st.newLine}/>в сохранении и приумножении капитала
           </h1>
           {screenSize === 's' ? IMAGE_SUBTITLE.small : IMAGE_SUBTITLE.large}
+        <Link link={emailLink}>
           <Button
             className={st.imageButton}
-            onClick={() => { window.location.assign(emailLink)}}
+            // onClick={() => { window.open(emailLink)}}
             withoutIcon={screenSize !== 'xl'}>
             Инвестировать
           </Button>
+        </Link>
       </TitleAnimation>
     </div>
     <div className={st.cards}>

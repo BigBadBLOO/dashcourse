@@ -12,6 +12,7 @@ import {ProviderScreenSize} from "@/app/components/screenSize/provider";
 import {ScreenSizeType} from "@/app/components/screenSize/context";
 import {Cookie} from "@/app/components/cookie/cookie";
 import {PreloadImages} from "@/app/components/layout/preloadImage/preloadImages";
+import {YandexMetric} from "@/app/components/layout/yandexMetrik/yandexMetric";
 
 import "./globals.css";
 import st from "./layout.module.scss";
@@ -55,9 +56,10 @@ export default function RootLayout({children}: Readonly<{
   return (
     <html lang="en">
     <Head>
-      <PreloadImages />
+      <PreloadImages/>
     </Head>
     <body className={cn(font.variable, st.body)}>
+    <YandexMetric/>
     <ProviderScreenSize initial={getDeviceType()}>
       <Header/>
       {children}

@@ -1,15 +1,15 @@
 "use client"
 import React, {useContext} from "react";
 import Image from "next/image";
+import cn from "classnames";
 
 import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {Link} from "@/app/components/dsm/Link/link";
 import {anchor} from "@/app/constants/anchor";
-
-import st from './footer.module.scss';
-import cn from "classnames";
 import {Button} from "@/app/components/dsm/Button/button";
 import {emailLink} from "@/app/constants/emailLink";
+
+import st from './footer.module.scss';
 
 
 export const Footer = () => {
@@ -38,9 +38,14 @@ export const Footer = () => {
         <p className={st.text}>ИНН 9714049826</p>
         <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
       </div>
-      <Button className={st.button} onClick={() => { window.location.assign(emailLink)}}>
-        Свяжитесь с нами
-      </Button>
+      <Link link={emailLink}>
+        <Button
+          className={st.button}
+          // onClick={() => {window.location.assign(emailLink)}}
+        >
+          Свяжитесь с нами
+        </Button>
+      </Link>
       <p className={st.rights}>© 2024. DASCOURSE</p>
     </footer>
   }
@@ -70,9 +75,14 @@ export const Footer = () => {
             <p className={st.text}>ИНН 9714049826</p>
             <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
           </div>
-          <Button className={st.button} onClick={() => { window.location.assign(emailLink)}}>
-            Свяжитесь с нами
-          </Button>
+          <Link link={emailLink}>
+            <Button
+              className={st.button}
+              // onClick={() => {window.location.assign(emailLink)}}
+            >
+              Свяжитесь с нами
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -108,9 +118,14 @@ export const Footer = () => {
           <p className={st.text}>ИНН 9714049826</p>
           <a className={st.text} href={'/files/cookies_DAS_PDF.pdf'} target="_blank">Cookies</a>
         </div>
-        <Button className={st.button} onClick={() => { window.location.assign(emailLink)}}>
-          Свяжитесь с нами
-        </Button>
+        <Link link={emailLink}>
+          <Button
+            className={st.button}
+            // onClick={() => {window.location.assign(emailLink)}}
+          >
+            Свяжитесь с нами
+          </Button>
+        </Link>
       </div>
     </div>
   </footer>
