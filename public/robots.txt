@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dascourse.com/sitemap.xml # Index sitemap
