@@ -56,7 +56,7 @@ export const About = () => {
     <div className={st.image}>
       <TitleAnimation show={titleShow}>
           <h1 className={st.imageTitle}>
-            Надежный партнер <br className={st.newLine}/>в сохранении и приумножении капитала
+            Надежный партнер <br className={st.newLine}/>в&nbsp;сохранении и&nbsp;приумножении капитала
           </h1>
           {screenSize === 's' ? IMAGE_SUBTITLE.small : IMAGE_SUBTITLE.large}
         <Link link={emailLink}>
