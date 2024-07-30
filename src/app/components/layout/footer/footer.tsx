@@ -10,6 +10,7 @@ import {emailLink} from "@/app/constants/emailLink";
 
 import st from './footer.module.scss';
 
+const phoneText = '8 (800) 444-20-91';
 
 export const Footer = () => {
   const {screenSize} = useContext(ContextForScreenSize);
@@ -35,14 +36,14 @@ export const Footer = () => {
         <p className={st.text}>Адрес: 125040, город Москва, Ленинградский пр-кт, д. 34а, помещ. 1305</p>
         <p className={st.text}>ОГРН 1247700371313</p>
         <p className={st.text}>ИНН 9714049826</p>
-        <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
+        <Link link={`/files/cookies_DAS_PDF.pdf`}>Cookies</Link>
       </div>
       <div className={cn(st.block, st.button)}>
         <Link link={emailLink}>
           info@dascourse.com
         </Link>
         <Link link="tel:+78004442091">
-          +7 (800) 444-20-91
+          {phoneText}
         </Link>
       </div>
       <p className={st.rights}>© 2024. DASCOURSE</p>
@@ -72,14 +73,14 @@ export const Footer = () => {
             <p className={st.text}>Адрес: 125040, город Москва, Ленинградский пр-кт, д. 34а, помещ. 1305</p>
             <p className={st.text}>ОГРН 1247700371313</p>
             <p className={st.text}>ИНН 9714049826</p>
-            <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
+            <Link link={`/files/cookies_DAS_PDF.pdf`}>Cookies</Link>
           </div>
           <div className={st.block}>
             <Link link={emailLink}>
               info@dascourse.com
             </Link>
             <Link link="tel:+78004442091">
-              +7 (800) 444-20-91
+              {phoneText}
             </Link>
           </div>
         </div>
@@ -115,14 +116,14 @@ export const Footer = () => {
           <p className={st.text}>Адрес: 125040, город Москва, Ленинградский пр-кт, д. 34а, помещ. 1305</p>
           <p className={st.text}>ОГРН 1247700371313</p>
           <p className={st.text}>ИНН 9714049826</p>
-          <a className={st.text} href={'/files/cookies_DAS_PDF.pdf'} target="_blank">Cookies</a>
+          <Link link={`/files/cookies_DAS_PDF.pdf`}>Cookies</Link>
         </div>
         <div className={st.block}>
           <Link link={emailLink}>
             info@dascourse.com
           </Link>
           <Link link="tel:+78004442091">
-            +7 (800) 444-20-91
+            {phoneText}
           </Link>
         </div>
       </div>

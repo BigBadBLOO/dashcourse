@@ -59,10 +59,9 @@ export const About = () => {
             Надежный партнер <br className={st.newLine}/>в&nbsp;сохранении и&nbsp;приумножении капитала
           </h1>
           {screenSize === 's' ? IMAGE_SUBTITLE.small : IMAGE_SUBTITLE.large}
-        <Link link={emailLink}>
+        <Link link="tel:+78004442091">
           <Button
             className={st.imageButton}
-            // onClick={() => { window.open(emailLink)}}
             withoutIcon={screenSize !== 'xl'}>
             Инвестировать
           </Button>
