@@ -6,7 +6,6 @@ import cn from "classnames";
 import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {Link} from "@/app/components/dsm/Link/link";
 import {anchor} from "@/app/constants/anchor";
-import {Button} from "@/app/components/dsm/Button/button";
 import {emailLink} from "@/app/constants/emailLink";
 
 import st from './footer.module.scss';
@@ -38,14 +37,14 @@ export const Footer = () => {
         <p className={st.text}>ИНН 9714049826</p>
         <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
       </div>
-      <Link link={emailLink}>
-        <Button
-          className={st.button}
-          // onClick={() => {window.location.assign(emailLink)}}
-        >
-          Свяжитесь с нами
-        </Button>
-      </Link>
+      <div className={cn(st.block, st.button)}>
+        <Link link={emailLink}>
+          info@dascourse.com
+        </Link>
+        <Link link="tel:+78004442091">
+          +7 (800) 444-20-91
+        </Link>
+      </div>
       <p className={st.rights}>© 2024. DASCOURSE</p>
     </footer>
   }
@@ -75,14 +74,14 @@ export const Footer = () => {
             <p className={st.text}>ИНН 9714049826</p>
             <a className={st.text} href={'./files/cookies_DAS_PDF.pdf'}>Cookies</a>
           </div>
-          <Link link={emailLink}>
-            <Button
-              className={st.button}
-              // onClick={() => {window.location.assign(emailLink)}}
-            >
-              Свяжитесь с нами
-            </Button>
-          </Link>
+          <div className={st.block}>
+            <Link link={emailLink}>
+              info@dascourse.com
+            </Link>
+            <Link link="tel:+78004442091">
+              +7 (800) 444-20-91
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -118,14 +117,14 @@ export const Footer = () => {
           <p className={st.text}>ИНН 9714049826</p>
           <a className={st.text} href={'/files/cookies_DAS_PDF.pdf'} target="_blank">Cookies</a>
         </div>
-        <Link link={emailLink}>
-          <Button
-            className={st.button}
-            // onClick={() => {window.location.assign(emailLink)}}
-          >
-            Свяжитесь с нами
-          </Button>
-        </Link>
+        <div className={st.block}>
+          <Link link={emailLink}>
+            info@dascourse.com
+          </Link>
+          <Link link="tel:+78004442091">
+            +7 (800) 444-20-91
+          </Link>
+        </div>
       </div>
     </div>
   </footer>
