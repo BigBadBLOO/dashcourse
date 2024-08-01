@@ -6,8 +6,9 @@ type PropsType = {
   children: React.ReactNode;
   link: string;
   onClick?: () => void;
+  target?: string;
 }
 
-export const Link: React.FC<PropsType> = ({children, link, onClick}) => {
-  return <LinkNext className={st.link} href={link} onClick={onClick}>{children}</LinkNext>
+export const Link: React.FC<PropsType> = ({children, link, onClick, target}) => {
+  return <LinkNext  target={target} className={st.link} href={link} onClick={onClick}>{children}</LinkNext>
 }

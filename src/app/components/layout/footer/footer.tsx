@@ -39,10 +39,10 @@ export const Footer = () => {
         <Link link={`/files/cookies_DAS_PDF.pdf`}>Cookies</Link>
       </div>
       <div className={cn(st.block, st.button)}>
-        <Link link={emailLink}>
+        <Link target="_blank" link={emailLink}>
           info@dascourse.com
         </Link>
-        <Link link="tel:+78004442091">
+        <Link target="_blank" link="tel:+78004442091">
           {phoneText}
         </Link>
       </div>
@@ -76,10 +76,10 @@ export const Footer = () => {
             <Link link={`/files/cookies_DAS_PDF.pdf`}>Cookies</Link>
           </div>
           <div className={st.block}>
-            <Link link={emailLink}>
+            <Link target="_blank" link={emailLink}>
               info@dascourse.com
             </Link>
-            <Link link="tel:+78004442091">
+            <Link target="_blank" link="tel:+78004442091">
               {phoneText}
             </Link>
           </div>
@@ -119,10 +119,10 @@ export const Footer = () => {
           <Link link={`/files/cookies_DAS_PDF.pdf`}>Cookies</Link>
         </div>
         <div className={st.block}>
-          <Link link={emailLink}>
+          <Link target="_blank" link={emailLink}>
             info@dascourse.com
           </Link>
-          <Link link="tel:+78004442091">
+          <Link target="_blank" link="tel:+78004442091">
             {phoneText}
           </Link>
         </div>

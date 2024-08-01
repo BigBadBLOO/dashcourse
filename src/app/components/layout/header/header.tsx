@@ -29,10 +29,10 @@ export const Header = () => {
         <Link link={`#${anchor.reviews}`}>Отзывы</Link>
       </div>
       <div className={st.block}>
-        <Link link={emailLink}>
+        <Link target="_blank" link={emailLink}>
           <Icon type="email" className={st.social} />
         </Link>
-        <Link link="tel:+78004442091">
+        <Link target="_blank" link="tel:+78004442091">
           <Icon type="phone" className={st.social} />
         </Link>
       </div>
@@ -52,10 +52,10 @@ export const Header = () => {
         alt="Logo dashcourse"
       />
       <div className={st.block}>
-        <Link link={emailLink}>
+        <Link target="_blank" link={emailLink}>
           <Icon type="email" className={st.social} />
         </Link>
-        <Link link="tel:+78004442091">
+        <Link target="_blank" link="tel:+78004442091">
           <Icon type="phone" className={st.social} />
         </Link>
       </div>
