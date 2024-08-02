@@ -30,7 +30,7 @@ export const ModalButton = () => {
     setErrors({});
   }
 
-  const isValid = (name: string, phone: string) => {
+  const isValid = (name: string, phone: string, email: string) => {
     let hasErrors = false;
 
     if (name.length < 2) {
@@ -47,12 +47,19 @@ export const ModalButton = () => {
       setErrors(prevState => ({...prevState, 'phone': false}));
     }
 
+    if (email.length > 0 && !/\S+@\S+\.\S+/.test(email)) {
+      hasErrors = true;
+      setErrors(prevState => ({...prevState, 'email': true}));
+    } else {
+      setErrors(prevState => ({...prevState, 'email': false}));
+    }
+
     return !hasErrors;
   }
 
   const onSubmit = (event: any) => {
     event.preventDefault();
-    if (isValid(event.target.name.value, event.target.phone.value)) {
+    if (isValid(event.target.name.value, event.target.phone.value, event.target.email.value)) {
       emailjs.init('rFDswXAxHYBpZMiAa');
       emailjs.sendForm('service_ikt4wvd', 'template_c34t2qs', formRef.current || '')
         .then(
@@ -110,7 +117,8 @@ export const ModalButton = () => {
                 Вернуться на главную
               </Button>
               : <>
-                <form className={st.form} ref={formRef} onSubmit={onSubmit}>
+                {/* @ts-ignore*/}
+                <form className={st.form} ref={formRef} novalidate="novalidate" onSubmit={onSubmit}>
                   <Input
                     type="text"
                     name="name"
@@ -125,7 +133,13 @@ export const ModalButton = () => {
                     isError={errors.phone}
                     message={errors.phone ? 'Некорректный формат телефона' : ''}
                   />
-                  <Input type="email" name="email" placeholder="Электронная почта"/>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Электронная почта"
+                    isError={errors.email}
+                    message={errors.email ? 'Некорректная почта' : ''}
+                  />
                   <Input type="text" name="comment" placeholder="Комментарий" message="Не более 100 символов"
                          maxLength={100}/>
                   <Button
