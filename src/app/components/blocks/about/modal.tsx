@@ -25,6 +25,11 @@ export const ModalButton = () => {
   const [errors, setErrors] = React.useState<ErrorsType>({});
   const [isSended, setIsSended] = React.useState(false);
 
+  const onClose = () => {
+    setIsOpen(false);
+    setErrors({});
+  }
+
   const isValid = (name: string, phone: string) => {
     let hasErrors = false;
 
@@ -91,7 +96,7 @@ export const ModalButton = () => {
                 </p>
             }
 
-            <Icon onClick={() => setIsOpen(false)} className={st.iconClose} type="close"/>
+            <Icon onClick={onClose} className={st.iconClose} type="close"/>
           </div>
           {errors.network &&
             <TextError>Что-то&nbsp;пошло не&nbsp;так:(Попробуйте заполнить форму чуть позже</TextError>}
@@ -100,7 +105,7 @@ export const ModalButton = () => {
             isSended
               ?  <Button
                 className={st.closeButton}
-                onClick={() => setIsOpen(false)}
+                onClick={onClose}
               >
                 Вернуться на главную
               </Button>
@@ -136,7 +141,7 @@ export const ModalButton = () => {
           }
 
         </div>
-        <div className={st.backgroundModal} onClick={() => setIsOpen(false)}/>
+        <div className={st.backgroundModal} onClick={onClose}/>
       </div>
     </CSSTransition>
   </>
