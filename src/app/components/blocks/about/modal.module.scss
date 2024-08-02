@@ -1,0 +1,115 @@
+@import 'src/app/style/style.config.scss';
+
+.imageButton {
+    max-width: 320px;
+    margin: 0 auto;
+
+    @include respond(m) {
+        max-width: 196px;
+    }
+
+    @include respond(xl) {
+        max-width: 275px;
+    }
+}
+
+.enter {
+    opacity: 0;
+}
+
+.enterActive {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.exit {
+    opacity: 1;
+}
+
+.exitActive {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.modalWrap {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: var(--base-dark);
+    border: 1px solid var(--accent);
+    width: 100%;
+    z-index: 1001;
+    border-radius: 32px;
+    padding: 20px;
+    max-width: 336px;
+    top: 70px;
+
+    @include respond(m) {
+        padding: 32px;
+        max-width: 468px;
+        top: 120px;
+    }
+
+    @include respond(l) {
+        max-width: 760px;
+        top: 200px;
+    }
+
+    @include respond(xl) {
+        max-width: 940px;
+    }
+}
+
+.title {
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    @include typography(110);
+
+    @include respond(l) {
+        @include typography(140);
+    }
+}
+
+.form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include respond(m) {
+        margin: 32px 0;
+        gap: 20px;
+    }
+}
+
+.policy {
+    text-align: center;
+    margin-top: 16px;
+    @include typography(100)
+}
+
+.iconClose {
+    fill: var(--base-white);
+}
+
+.headerWrap {
+    display: flex;
+    gap: 4px;
+    justify-content: space-between;
+}
+
+.backgroundModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--base-dark);
+    opacity: 0.7;
+    z-index: 1000;
+}
+
+.closeButton {
+    margin-top: 32px;
+}

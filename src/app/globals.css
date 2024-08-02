@@ -4,6 +4,7 @@
   --base-white: #FFFFFF;
   --darkGray: #8A8A8A;
   --accent: #FF5F00;
+  --error: #E12828;
 }
 
 * {

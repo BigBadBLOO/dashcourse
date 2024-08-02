@@ -10,9 +10,10 @@ type PropsType = {
   isDisabled?: boolean;
   className?: string;
   withoutIcon?: boolean;
+  type?: "button" | "submit" | "reset";
 }
-export const Button: React.FC<PropsType> = ({children, onClick, className, isDisabled, withoutIcon}) => {
-  return <button className={cn(st.button, withoutIcon && st.withoutIcon, className)} type="button" onClick={() => onClick?.()} disabled={isDisabled}>
+export const Button: React.FC<PropsType> = ({children, type = 'button', onClick, className, isDisabled, withoutIcon}) => {
+  return <button type={type} className={cn(st.button, withoutIcon && st.withoutIcon, className)} onClick={() => onClick?.()} disabled={isDisabled}>
     {!withoutIcon && <span className={st.emptyIcon}></span>}
     <span className={st.text}>{children}</span>
     {!withoutIcon && <span className={st.circle}><Icon type="arrowDiag" /></span>}

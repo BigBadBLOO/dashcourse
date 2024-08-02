@@ -1,0 +1,15 @@
+@import 'src/app/style/style.config.scss';
+
+.textError {
+  color: var(--error);
+  fill: var(--error);
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  @include typography(90);
+  margin-top: 8px;
+}
+
+.errorIcon {
+  margin: auto 0;
+}

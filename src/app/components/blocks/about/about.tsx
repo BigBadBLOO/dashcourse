@@ -2,13 +2,11 @@
 import {CSSTransition} from "react-transition-group";
 import React, {createRef, RefObject, useContext, useEffect} from "react";
 
-import {Button} from "@/app/components/dsm/Button/button";
 import {ContextForScreenSize} from "@/app/components/screenSize/context";
 import {anchor} from "@/app/constants/anchor";
 import {TitleAnimation} from "@/app/components/titleAnimation/titleAnimation";
 import {useObserver} from "@/app/hooks/useObserver";
-import {emailLink} from "@/app/constants/emailLink";
-import {Link} from "@/app/components/dsm/Link/link";
+import {ModalButton} from "@/app/components/blocks/about/modal";
 
 import st from './about.module.scss';
 
@@ -37,6 +35,7 @@ const CARDS = (size: string) => [
     nodeRef: createRef() as RefObject<HTMLDivElement>,
   }
 ]
+
 export const About = () => {
   const {screenSize} = useContext(ContextForScreenSize);
   const showBlock = useObserver(anchor.about, {threshold: 0.5});
@@ -59,13 +58,7 @@ export const About = () => {
             Надежный партнер <br className={st.newLine}/>в&nbsp;сохранении и&nbsp;приумножении капитала
           </h1>
           {screenSize === 's' ? IMAGE_SUBTITLE.small : IMAGE_SUBTITLE.large}
-        <Link link="tel:+78004442091">
-          <Button
-            className={st.imageButton}
-            withoutIcon={screenSize !== 'xl'}>
-            Инвестировать
-          </Button>
-        </Link>
+        <ModalButton />
       </TitleAnimation>
     </div>
     <div className={st.cards}>

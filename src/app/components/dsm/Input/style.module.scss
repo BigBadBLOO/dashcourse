@@ -1,0 +1,64 @@
+@import 'src/app/style/style.config.scss';
+
+.container {
+  color: var(--darkGray);
+
+  @include typography(90);
+}
+
+.isError {
+  color: var(--error)!important;
+}
+
+
+.wrap {
+  border-radius: 40px;
+  padding: 16px 20px;
+  border: 1px solid var(--base-white);
+  background-color: var(--base-dark);
+}
+
+.wrapError {
+  border: 1px solid var(--error);
+}
+
+
+.input {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--base-white);
+}
+
+.input::placeholder {
+  color: var(--darkGray);
+}
+
+.input:focus {
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+/* Change the white to any color */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active{
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.inputError::placeholder {
+  color: var(--error);
+}
+
+.message {
+  margin-top: 8px;
+}
+
+.textError {
+  justify-content: left!important;
+  margin-top: 8px;
+}

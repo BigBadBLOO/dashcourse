@@ -14,7 +14,7 @@ const NavigationIcons = [
   'previous',
   'next',
   'rotate',
-  'rotateBack'
+  'rotateBack',
 ] as const;
 
 const DropDownIcons = [
@@ -36,7 +36,8 @@ const SocialIcons = [
   'dzen',
   'alisa',
   'phone',
-  'email'
+  'email',
+  'errorWarning'
 ] as const;
 
 export const IconTypes = [

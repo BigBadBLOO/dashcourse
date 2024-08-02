@@ -1,7 +1,7 @@
 @import 'src/app/style/style.config.scss';
 
 .wrap {
-    color: var(--base-white)
+    color: var(--base-white);
 }
 
 .newLine {
@@ -66,19 +66,6 @@
 
         @include respond(m) {
             @include typography(120);
-        }
-    }
-
-    .imageButton {
-        max-width: 320px;
-        margin: 0 auto;
-
-        @include respond(m) {
-            max-width: 196px;
-        }
-
-        @include respond(xl) {
-            max-width: 275px;
         }
     }
 }
