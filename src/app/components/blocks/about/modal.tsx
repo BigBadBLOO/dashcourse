@@ -98,8 +98,7 @@ export const ModalButton = () => {
                   Заявка отправлена! <br/> Ответим вам в&nbsp;течение двух рабочих дней
                 </p>
                 : <p className={st.title}>
-                  Оставьте контакты&nbsp;&mdash; мы&nbsp;напишем вам в&nbsp;течение 2 дней, чтобы
-                  обсудить проект
+                  Оставьте контакты&nbsp;&mdash; мы&nbsp;свяжемся с&nbsp;вами, чтобы обсудить детали
                 </p>
             }
 
@@ -149,7 +148,7 @@ export const ModalButton = () => {
                     Отправить заявку
                   </Button>
                 </form>
-                <p className={st.policy}>Отправить заявку Нажимая кнопку, вы&nbsp;соглашаетесь на&nbsp;обработку <Link
+                <p className={st.policy}>Нажимая кнопку, вы&nbsp;соглашаетесь на&nbsp;обработку <Link
                   link="/files/policy.pdf">персональных&nbsp;данных</Link></p>
               </>
           }

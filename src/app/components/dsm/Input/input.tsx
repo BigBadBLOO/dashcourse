@@ -20,6 +20,6 @@ export const Input: React.FC<PropsType> = ({name, placeholder, message, isError,
     <div className={cn(st.wrap, isError && st.wrapError)}>
       <input type={type} className={cn(st.input, isError && st.inputError)} name={name} placeholder={placeholder} maxLength={maxLength} />
     </div>
-    {message && isError ? <TextError className={st.textError}>{message}</TextError> : <p className={st.message}>{message}</p>}
+    {message && (isError ? <TextError className={st.textError}>{message}</TextError> : <p className={st.message}>{message}</p>)}
   </div>
 }
