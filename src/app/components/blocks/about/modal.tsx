@@ -126,7 +126,7 @@ export const ModalButton = () => {
                     message={errors.phone ? 'Некорректный формат телефона' : ''}
                   />
                   <Input type="email" name="email" placeholder="Электронная почта"/>
-                  <Input type="text" name="summ" placeholder="Комментарий" message="Не более 100 символов"
+                  <Input type="text" name="comment" placeholder="Комментарий" message="Не более 100 символов"
                          maxLength={100}/>
                   <Button
                     className={st.submit}
